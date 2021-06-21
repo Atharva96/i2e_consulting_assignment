@@ -28,3 +28,8 @@ file with updated content
 7. navbar.html is used for navigation pannel which contains dummy buttons for menu
 
 8. sqlite3 database is used as it is inbuilt supported database for Django
+
+
+
+
+![Screenshot (88)](https://user-images.githubusercontent.com/46940879/122793236-ddac4b80-d2b2-11eb-8783-542a6e7320a9.png)
