@@ -1,0 +1,92 @@
+{% extends 'base.html' %}v
+{% block 'mainbody' %}
+
+
+
+
+<br>
+
+
+
+<div class="row">
+    <div class="col s12 l8 m8  " style="padding:20px">
+
+        <form action="" method="post">{% csrf_token %}
+            <div class="input-field col s12">
+                <input id="filename" name="filename" type="text" class="validate" value="{{data.filename}}">
+                <label for="filename">File Name</label>
+            </div>
+    
+    
+            <div class="input-field col s12">
+                <textarea id="content"  name="content" class="materialize-textarea"
+                    style="height:300px;border:1px solid grey;padding:15px">{{data.content}}</textarea>
+                <label for="content">Textarea</label>
+            </div>
+    
+            <input type="text" name="id" id="{{data.id}}" style="visibility: hidden;height:1px !important">
+    
+            <center>
+                <button type="submit" class="waves-effect waves-light btn green  " style="border-radius: 20px;"><i
+                        class="material-icons left">save</i>Save file
+                </button>
+            </center>
+
+        </form>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="col s12 l4 m4  " style="padding:10px">
+        <center>
+            <a href="/" class="waves-effect waves-light btn white grey-text text-darken-3"
+                style="border-radius: 20px;"><i class="material-icons left">add</i>Create</a>
+        </center>
+        <br>
+        <ul class="collection with-header">
+            {% for file in files %}
+            <li class="collection-item">
+                <div>
+                    <i class="material-icons left blue-text">insert_drive_file</i>
+                    <span href="#!" class="grey-text text-darken-3">{{file.filename|slice:"20"}} </span>
+                    <a href="/deletefile/{{file.id}}"><i class="material-icons right red-text">delete</i></a>
+                    <a href="/updatefile/{{file.id}}"><i class="material-icons right ">edit</i></a>
+                </div>
+            </li> 
+
+            {% endfor %}
+
+
+
+
+        </ul>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+</script>
+
+
+
+{% endblock 'mainbody' %}
+{% block 'js' %}
+{% endblock 'js' %}
